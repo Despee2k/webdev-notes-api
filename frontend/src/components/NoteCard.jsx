@@ -12,31 +12,31 @@ const NoteCard = ({ note, onUpdate, onDelete }) => {
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow">
+    <div className="p-4 bg-gray-800 rounded-lg shadow text-white">
       {isEditing ? (
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 bg-gray-700 border-gray-600 text-white rounded"
           />
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 bg-gray-700 border-gray-600 text-white rounded"
           />
           <div className="flex justify-end space-x-2">
             <button
               type="button"
               onClick={() => setIsEditing(false)}
-              className="px-4 py-2 text-gray-600 bg-gray-100 rounded hover:bg-gray-200"
+              className="px-4 py-2 bg-gray-600 text-gray-300 rounded hover:bg-gray-500"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+              className="px-4 py-2 bg-gray-400 text-black rounded hover:bg-gray-300"
             >
               Save
             </button>
@@ -44,18 +44,18 @@ const NoteCard = ({ note, onUpdate, onDelete }) => {
         </form>
       ) : (
         <div>
-          <h3 className="text-lg font-semibold">{title}</h3>
-          <p className="mt-2 text-gray-600">{content}</p>
+          <h3 className="text-lg font-semibold text-gray-100">{title}</h3>
+          <p className="mt-2 text-gray-300">{content}</p>
           <div className="flex justify-end mt-4 space-x-2">
             <button
               onClick={() => setIsEditing(true)}
-              className="px-4 py-2 text-blue-600 bg-blue-100 rounded hover:bg-blue-200"
+              className="px-4 py-2 bg-gray-600 text-gray-300 rounded hover:bg-gray-500"
             >
               Edit
             </button>
             <button
               onClick={() => onDelete(note.id)}
-              className="px-4 py-2 text-red-600 bg-red-100 rounded hover:bg-red-200"
+              className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500"
             >
               Delete
             </button>

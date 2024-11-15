@@ -47,10 +47,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gray-50">
+    <div className="min-h-screen p-8 bg-gray-900 text-white">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold">My Notes</h1>
+          <h1 className="text-3xl font-bold text-gray-100">My Notes</h1>
           <div className="mt-4">
             <NoteForm onSubmit={handleCreateNote} />
           </div>
